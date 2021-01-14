@@ -1,0 +1,6 @@
+{
+    "python.workspaceSymbols.exclusionPatterns": [
+        "**/site-packages/**",
+        "/Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/"
+    ]
+}
