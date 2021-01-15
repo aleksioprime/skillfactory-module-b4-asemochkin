@@ -1,5 +1,3 @@
-DB_PATH_LOCAL = "sqlite:///sochi_athletes_local.sqlite3"
-
 def valid_email(email):
     """Функция проверяет правильность ввода email"""
     if email.count('@') == 1:
