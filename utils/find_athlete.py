@@ -46,7 +46,7 @@ def main():
 
 if __name__ == "__main__":
     import db
-    DB_PATH_LOCAL = "sqlite:///./sochi_athletes.sqlite3"
+    DB_PATH_LOCAL = "sqlite:///../sochi_athletes.sqlite3"
     main()
 else:
     from utils import db
