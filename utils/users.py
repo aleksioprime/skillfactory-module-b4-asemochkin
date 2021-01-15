@@ -1,6 +1,7 @@
 DB_PATH_LOCAL = "sqlite:///sochi_athletes_local.sqlite3"
 
 def valid_email(email):
+    """Функция проверяет правильность ввода email"""
     if email.count('@') == 1:
         if "." in email.split("@")[1]:
             return True
@@ -8,8 +9,9 @@ def valid_email(email):
     return False
 
 def valid_date(date):
+    """Функция проверяет правильность ввода даты рождения в формате yyyy-mm-dd"""
     list_date = date.split("-")
-    if (len(list_date) == 3) and ((int(list_date[0]) >= 1900) and (int(list_date[0]) <= 2010)) and \
+    if (len(list_date) == 3) and ((int(list_date[0]) >= 1900) and (int(list_date[0]) <= 2020)) and \
     ((int(list_date[1]) >= 0) and (int(list_date[1])) <= 12) and \
     ((int(list_date[2]) >= 0) and (int(list_date[1])) <= 31):
         return True
@@ -18,6 +20,8 @@ def valid_date(date):
         return False
 
 def request_data(db_path):
+    """Функция подключается к базе данных и запрашивает на ввод данные пользователя, 
+    затем сохраняет их в базу данных в таблицу user"""
     session = db.connect_db(db_path)
     print("Введите данные для регистрации:")
     first_name = input("Введите имя: ")
@@ -48,6 +52,7 @@ def main():
 
 if __name__ == "__main__":
     import db
+    DB_PATH_LOCAL = "sqlite:///./sochi_athletes.sqlite3"
     main()
 else:
     from utils import db
